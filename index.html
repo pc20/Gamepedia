@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav {
+            padding-right: 25px;
+            padding-left: -10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background-color: #555;
+            margin-left: 10px;
+        }
+
+        nav a:hover {
+            background-color: #666;
+        }
+
+        section {
+            padding: 100px 20px 20px;
+            /* Adjusted padding to account for the fixed navbar */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        li {
+            margin: 10px;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .card {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card .front,
+        .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .front img,
+        .card .back img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .card .front {
+            transform: rotateY(0deg);
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .card-content p {
+            margin: 5px 0;
+        }
+
+        .about-me {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <title>Gamepedia</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gamepedia</h1>
+        <p> By: Abhinav Garg and Anirudh Singh </p>
+        <nav>
+            <a href="#action">Action</a>
+            <a href="#adventure">Adventure</a>
+            <a href="#puzzle">Puzzle</a>
+            <a href="#sports">Sports</a>
+        </nav>
+    </header>
+
+    <section id="action">
+        <h2>Action Games</h2>
+        <ul>
+            <li>
+                <h3><a href="https://en.wikipedia.org/wiki/Call_of_Heroes">Call of Heroes</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/action_game1.jpg" alt="Action Game 1">
+                    </div>
+                    <div class="back">
+                        <p>Description: An intense action-packed game with stunning graphics and epic battles.</p>
+                        <p>Release Date: January 1, 2023</p>
+                        <p>Platform: PC, Xbox, PlayStation</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h3><a href="https://en.wikipedia.org/wiki/Stealth_game">Stealth Game</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/action_game2.jpg" alt="Action Game 2">
+                    </div>
+                    <div class="back">
+                        <p>Description: Dive into the world of covert operations and tactical combat in this thrilling
+                            action game.</p>
+                        <p>Release Date: March 15, 2023</p>
+                        <p>Platform: PlayStation, Nintendo Switch</p>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more action games as needed -->
+        </ul>
+    </section>
+
+    <section id="adventure">
+        <h2>Adventure Games</h2>
+        <ul>
+            <li>
+                <h3>
+                    <a href="https://en.wikipedia.org/wiki/Mystic_Chronicles">Mystic Chronicles</a>
+                </h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/adventure_game2.png" alt="Lost Explorer">
+                    </div>
+                    <div class="back">
+                        <p>Description: Solve intricate puzzles and unravel the secrets of an ancient civilization in
+                            this
+                            gripping
+                            adventure.</p>
+                        <p>Release Date: April 20, 2023</p>
+                        <p>Platform: Xbox, Nintendo Switch</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    <a href="https://store.steampowered.com/app/2591270/Enigma_Quest/">Quest for Enigma</a>
+                </h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/adventure_game1.jpg" alt="Epic Quest">
+                    </div>
+                    <div class="back">
+                        <p>Description: Embark on a quest through a magical world filled with puzzles, mysteries, and
+                            mythical
+                            creatures.</p>
+                        <p>Release Date: February 28, 2023</p>
+                        <p>Platform: PC, PlayStation</p>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more adventure games as needed -->
+        </ul>
+    </section>
+
+    <section id="puzzle">
+        <h2>Puzzle Games</h2>
+        <ul>
+            <li>
+                <h3>
+                    <a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a>
+                </h3>
+
+                <div class="card">
+                    <div class="front">
+                        <img src="images/puzzle_game1.jpg" alt="Puzzle Game 1">
+                    </div>
+                    <div class="back">
+                        <p>Description: Test your brainpower with a collection of mind-bending puzzles and challenges.
+                        </p>
+                        <p>Release Date: May 10, 2007</p>
+                        <p>Platform: PC</p>
+                    </div>
+                </div>
+
+            </li>
+            <li>
+                <h3>
+                    <a href="https://en.wikipedia.org/wiki/Codebreaker_(video_game)">Code Breaker</a>
+                </h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/puzzle_game2.jpg" alt="Puzzle Game 3">
+                    </div>
+                    <div class="back">
+
+                        <p>Description: Unravel complex codes and solve cryptographic puzzles in this thrilling PC
+                            puzzle
+                            game.</p>
+                        <p>Release Date: October 20, 2023</p>
+                        <p>Platform: PC</p>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more puzzle games as needed -->
+        </ul>
+    </section>
+
+    <section id="sports">
+        <h2>Sports Games</h2>
+        <ul>
+            <li>
+                <h3><a href="https://en.wikipedia.org/wiki/Virtua_Fighter_5">Virtua_Fighter_5</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/sports_game1.jpg" alt="Sports Game 1">
+                    </div>
+                    <div class="back">
+
+                        <p>Description: Experience the thrill of competitive sports with realistic graphics and
+                            immersive
+                            gameplay.
+                        </p>
+                        <p>Release Date: July 15, 2023</p>
+                        <p>Platform: PlayStation, Xbox</p>
+                    </div>
+
+            </li>
+            <li>
+                <h3> <a href="https://videogamefanon.fandom.com/wiki/Rush_Rivals">Rush Rivals</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/sports_game2.jpg" alt="Sports Game 2">
+                    </div>
+                    <div class="back">
+
+                        <p>Description: Engage in fast-paced action and strategic plays in this exciting multiplayer
+                            sports
+                            game.
+                        </p>
+                        <p>Release Date: August 8, 2023</p>
+                        <p>Platform: Nintendo Switch, PC</p>
+                    </div>
+
+            </li>
+            <!-- Add more sports games as needed -->
+        </ul>
+    </section>
+
+    <section id="racing">
+        <h2>Racing Games</h2>
+        <ul>
+            <li>
+                <h3><a href="https://en.wikipedia.org/wiki/Need_for_Speed_Rivals">Speed Rivals</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/nfs.jpg" alt="Speed Rivals">
+                    </div>
+                    <div class="back">
+
+                        <p>Description: Experience high-speed racing with realistic graphics and thrilling tracks in
+                            this action-packed racing game.</p>
+                        <p>Release Date: May 5, 2023</p>
+                        <p>Platform: PC, Xbox, PlayStation</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h3><a href="https://en.wikipedia.org/wiki/Driver_(video_game)">Driver</a></h3>
+                <div class="card">
+                    <div class="front">
+                        <img src="images/driver.png" alt="Driver">
+                    </div>
+                    <div class="back">
+                        <p>Description: Driver is an action driving video game and the first installment in the Driver
+                            series.</p>
+                        <p>Release Date: 25 June 1999</p>
+                        <p>Platform: Playstation, PC, Xbox</p>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more racing games as needed -->
+        </ul>
+    </section>
+
+    <section class="about-me">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Gamepedia! We are
+        <h4> Abhinav Garg & Anirudh Singh students of Class X C</h4>
+        Passionate about gaming, we created this website to showcase some amazing games across different genres.
+        Explore the world of action, adventure, puzzle, and sports games. Don't hesitate to dive into the details of
+        each game by clicking on the cards.
+        Enjoy your gaming journey!
+        </p>
+    </section>
+
+
+</body>
+
+</html>
